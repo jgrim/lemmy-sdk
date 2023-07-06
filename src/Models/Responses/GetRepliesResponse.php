@@ -1,0 +1,13 @@
+<?php
+
+namespace JGrim\Lemmy\Sdk\Models\Responses;
+
+use JGrim\Lemmy\Sdk\Contracts\ResponseModel as Model;
+use JGrim\Lemmy\Sdk\Models\Views\CommentReplyView;
+use Sunrise\Hydrator\Annotation\Relationship;
+
+final class GetRepliesResponse implements Model
+{
+    #[Relationship(CommentReplyView::class)]
+    public array $replies;
+}
