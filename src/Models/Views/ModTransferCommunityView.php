@@ -5,7 +5,7 @@ namespace JGrim\Lemmy\Sdk\Models\Views;
 use JGrim\Lemmy\Sdk\Contracts\Model;
 use JGrim\Lemmy\Sdk\Models\Data\Community;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
-use JGrim\Lemmy\Sdk\Models\Request\ModTransferCommunity;
+use JGrim\Lemmy\Sdk\Models\Data\ModTransferCommunity;
 
 final class ModTransferCommunityView implements Model
 {

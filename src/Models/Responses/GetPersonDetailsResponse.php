@@ -13,9 +13,9 @@ final class GetPersonDetailsResponse implements Model
 {
     public PersonView $person_view;
     #[Relationship(CommentView::class)]
-    public ?array $comment_view = null;
+    public ?array $comments = null;
     #[Relationship(PostView::class)]
-    public ?array $post_view = null;
+    public ?array $posts = null;
     #[Relationship(CommunityModeratorView::class)]
     public ?array $moderates = null;
 

@@ -6,7 +6,7 @@ use JGrim\Lemmy\Sdk\Contracts\Model;
 use JGrim\Lemmy\Sdk\Models\Data\Community;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
 use JGrim\Lemmy\Sdk\Models\Data\Post;
-use JGrim\Lemmy\Sdk\Models\Request\ModLockPost;
+use JGrim\Lemmy\Sdk\Models\Data\ModLockPost;
 
 final class ModLockPostView implements Model
 {

@@ -9,5 +9,5 @@ use JGrim\Lemmy\Sdk\Models\Data\Person;
 final class PersonView implements Model
 {
     public Person $person;
-    public ?PersonAggregates $personAggregates = null;
+    public PersonAggregates $counts;
 }

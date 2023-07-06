@@ -7,7 +7,7 @@ use JGrim\Lemmy\Sdk\Models\Data\Comment;
 use JGrim\Lemmy\Sdk\Models\Data\Community;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
 use JGrim\Lemmy\Sdk\Models\Data\Post;
-use JGrim\Lemmy\Sdk\Models\Request\ModRemoveComment;
+use JGrim\Lemmy\Sdk\Models\Data\ModRemoveComment;
 
 final class ModRemoveCommentView implements Model
 {

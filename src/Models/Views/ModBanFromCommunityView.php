@@ -5,7 +5,7 @@ namespace JGrim\Lemmy\Sdk\Models\Views;
 use JGrim\Lemmy\Sdk\Contracts\Model;
 use JGrim\Lemmy\Sdk\Models\Data\Community;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
-use JGrim\Lemmy\Sdk\Models\Request\ModBanFromCommunity;
+use JGrim\Lemmy\Sdk\Models\Data\ModBanFromCommunity;
 
 final class ModBanFromCommunityView implements Model
 {

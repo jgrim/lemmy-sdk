@@ -5,7 +5,7 @@ namespace JGrim\Lemmy\Sdk\Models\Views;
 use JGrim\Lemmy\Sdk\Contracts\Model;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
 use JGrim\Lemmy\Sdk\Models\Data\Post;
-use JGrim\Lemmy\Sdk\Models\Request\AdminPurgeComment;
+use JGrim\Lemmy\Sdk\Models\Data\AdminPurgeComment;
 
 final class AdminPurgeCommentView implements Model
 {

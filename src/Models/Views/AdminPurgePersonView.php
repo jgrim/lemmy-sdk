@@ -4,7 +4,7 @@ namespace JGrim\Lemmy\Sdk\Models\Views;
 
 use JGrim\Lemmy\Sdk\Contracts\Model;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
-use JGrim\Lemmy\Sdk\Models\Request\AdminPurgePerson;
+use JGrim\Lemmy\Sdk\Models\Data\AdminPurgePerson;
 
 final class AdminPurgePersonView implements Model
 {
