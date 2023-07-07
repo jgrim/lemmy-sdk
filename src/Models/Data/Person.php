@@ -19,6 +19,7 @@ final class Person implements Model
     public ?string $banner = null;
     public bool $deleted;
     public ?string $inbox_url = null; // @todo, should this be optional
+    public ?string $shared_inbox_url = null; // @todo, should this be optional
     public ?string $matrix_user_id = null;
     public bool $admin;
     public bool $bot_account;
