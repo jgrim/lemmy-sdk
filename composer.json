@@ -9,15 +9,13 @@
     "guzzlehttp/psr7": "^1.7|^2.0",
     "sunrise/hydrator": "^3.0",
     "ext-fileinfo": "*",
-    "doctrine/annotations": "^1.14"
+    "doctrine/annotations": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "ext-simplexml": "*",
     "phpunit/phpunit": "9.5",
-    "mockery/mockery": "^1.6.2",
-    "phpstan/phpstan": "^0.12.100",
-    "friendsofphp/php-cs-fixer": "^2.19.3"
+    "mockery/mockery": "^1.6.2"
   },
   "scripts": {
     "analyze": "vendor/bin/phpstan analyse -l 6 src/",
