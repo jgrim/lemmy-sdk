@@ -8,7 +8,8 @@
     "guzzlehttp/guzzle": "^6.0|^7.0",
     "guzzlehttp/psr7": "^1.7|^2.0",
     "sunrise/hydrator": "^3.0",
-    "ext-fileinfo": "*"
+    "ext-fileinfo": "*",
+    "doctrine/annotations": "^1.14"
   },
   "require-dev": {
     "ext-simplexml": "*",

@@ -7,15 +7,16 @@ use JGrim\Lemmy\Sdk\Models\Data\Community;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
 use JGrim\Lemmy\Sdk\Models\Data\Post;
 use JGrim\Lemmy\Sdk\Models\Data\ModLockPost;
+use Sunrise\Hydrator\Annotation\Relationship;
 
 final class ModLockPostView implements Model
 {
-    #[\Sunrise\Hydrator\Annotation\Relationship(ModLockPost::class)]
+    #[Relationship(ModLockPost::class)]
     public ModLockPost $mod_lock_post;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Person::class)]
+    #[Relationship(Person::class)]
     public ?Person $moderator = null;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Post::class)]
+    #[Relationship(Post::class)]
     public ?Post $post = null;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Community::class)]
+    #[Relationship(Community::class)]
     public ?Community $community = null;
 }

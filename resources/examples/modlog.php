@@ -14,6 +14,11 @@ $client = Client::create(
     'https://discuss.online'
 );
 
+
+$response = $client->processForm(
+    Hydrator::hydrate(\JGrim\Lemmy\Sdk\Models\Forms\GetSiteMetadata::class, ['url' => 'https://google.com'])
+);
+
 /** @var GetModlogResponse $auth */
 
 

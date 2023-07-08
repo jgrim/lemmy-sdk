@@ -8,19 +8,20 @@ use JGrim\Lemmy\Sdk\Models\Data\Community;
 use JGrim\Lemmy\Sdk\Models\Data\Person;
 use JGrim\Lemmy\Sdk\Models\Data\Post;
 use JGrim\Lemmy\Sdk\Models\Data\ModRemoveComment;
+use Sunrise\Hydrator\Annotation\Relationship;
 
 final class ModRemoveCommentView implements Model
 {
-    #[\Sunrise\Hydrator\Annotation\Relationship(ModRemoveComment::class)]
+    #[Relationship(ModRemoveComment::class)]
     public ModRemoveComment $mod_remove_comment;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Person::class)]
+    #[Relationship(Person::class)]
     public ?Person $moderator = null;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Comment::class)]
+    #[Relationship(Comment::class)]
     public Comment $comment;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Person::class)]
+    #[Relationship(Person::class)]
     public Person $commenter;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Post::class)]
+    #[Relationship(Post::class)]
     public Post $post;
-    #[\Sunrise\Hydrator\Annotation\Relationship(Community::class)]
+    #[Relationship(Community::class)]
     public Community $community;
 }
