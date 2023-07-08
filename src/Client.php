@@ -74,7 +74,7 @@ final readonly class Client
     {
         return $this->client->sendAsync($request, $options)
             ->then(static function (ResponseInterface $response) use ($responseModel): ResponseModel {
-                return Hydrator::hydrate($responseModel, $response->getBody());
+                return Hydrator::hydrate($responseModel, (string)$response->getBody());
             }, static function (RequestExceptionInterface $response): void {
                 RequestExceptionHandler::handle($response);
             })->wait();
