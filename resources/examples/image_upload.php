@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 include_once '../../vendor/autoload.php';
 
 use JGrim\Lemmy\Sdk\Client;
@@ -20,7 +21,6 @@ $auth = $client->processForm(
 
 $authToken = $auth->jwt;
 
-
 $file = new SplTempFileObject();
 $file->fwrite(file_get_contents('IMG_5597.jpg'));
 $file->rewind();
@@ -29,7 +29,3 @@ $response = $client->upload(
     $authToken,
     $file
 );
-
-
-if ($response);
-

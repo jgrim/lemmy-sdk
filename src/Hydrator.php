@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace JGrim\Lemmy\Sdk;
 
@@ -8,16 +9,6 @@ use Sunrise\Hydrator\Hydrator as SunriseHydrator;
 class Hydrator
 {
     private static SunriseHydrator $hydrator;
-
-    private static function hydrator(): SunriseHydrator
-    {
-        if (!isset(self::$hydrator)) {
-            self::$hydrator = new SunriseHydrator();
-            self::$hydrator->useDefaultAnnotationReader();
-        }
-        return self::$hydrator;
-    }
-
 
     public static function hydrate(string $className, string|array $json): Model
     {
@@ -39,5 +30,14 @@ class Hydrator
             // It's logic error
             throw $e;
         }
+    }
+
+    private static function hydrator(): SunriseHydrator
+    {
+        if (!isset(self::$hydrator)) {
+            self::$hydrator = new SunriseHydrator();
+            self::$hydrator->useDefaultAnnotationReader();
+        }
+        return self::$hydrator;
     }
 }

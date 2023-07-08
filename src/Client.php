@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace JGrim\Lemmy\Sdk;
 
@@ -19,6 +20,10 @@ final readonly class Client
 {
     private const API_VERSION = 'v3';
 
+    public function __construct(public GuzzleClient $client)
+    {
+    }
+
     public static function create(string $uri): self
     {
         return new self(new GuzzleClient([
@@ -29,10 +34,6 @@ final readonly class Client
                 'Content-Type' => 'application/json'
             ]
         ]));
-    }
-
-    public function __construct(public GuzzleClient $client)
-    {
     }
 
     public function upload(
@@ -69,6 +70,16 @@ final readonly class Client
         }
     }
 
+    private function request(string $responseModel, Request $request, array $options = []): ResponseModel
+    {
+        return $this->client->sendAsync($request, $options)
+            ->then(static function (ResponseInterface $response) use ($responseModel): ResponseModel {
+                return Hydrator::hydrate($responseModel, $response->getBody());
+            }, static function (RequestExceptionInterface $response): void {
+                RequestExceptionHandler::handle($response);
+            })->wait();
+    }
+
     public function processForm(Contracts\ActionModel $action): ResponseModel
     {
         try {
@@ -88,8 +99,13 @@ final readonly class Client
                     )
                 ),
                 $action instanceof Put => $this->request(
-                    $responseModel,
-                    new Request('PUT', $uri, $headers, json_encode($body, JSON_THROW_ON_ERROR), $version)
+                    $action->responseModel(),
+                    new Request(
+                        'PUT',
+                        $resourceUri,
+                        [],
+                        json_encode($params, JSON_THROW_ON_ERROR)
+                    )
                 ),
                 default => $this->request(
                     $action->responseModel(),
@@ -106,15 +122,5 @@ final readonly class Client
             // @todo do something about it
             throw $jsonException;
         }
-    }
-
-    private function request(string $responseModel, Request $request, array $options = []): ResponseModel
-    {
-        return $this->client->sendAsync($request, $options)
-            ->then(static function (ResponseInterface $response) use ($responseModel): ResponseModel {
-                return Hydrator::hydrate($responseModel, $response->getBody());
-            }, static function (RequestExceptionInterface $response): void {
-                RequestExceptionHandler::handle($response);
-            })->wait();
     }
 }

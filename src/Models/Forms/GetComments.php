@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace JGrim\Lemmy\Sdk\Models\Forms;
 
@@ -14,7 +15,7 @@ final class GetComments implements Get
     public ?int $max_depth = null;
     public ?int $page = null;
     public ?int $limit = null;
-    public ?ing $community_id = null;
+    public ?int $community_id = null;
     public ?string $community_name = null;
     public ?int $post_id = null;
     public ?int $parent_id = null;
