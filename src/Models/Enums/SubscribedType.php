@@ -3,9 +3,13 @@ declare(strict_types=1);
 
 namespace JGrim\Lemmy\Sdk\Models\Enums;
 
+use JGrim\Lemmy\Sdk\Models\Enums\Trait\GetEnumTypes;
+
 enum SubscribedType: string
 {
-    case Subscribed = 'Subscribed';
-    case NotSubscribed = 'NotSubscribed';
-    case Pending = 'Pending';
+    use GetEnumTypes;
+
+    case SUBSCRIBED = 'Subscribed';
+    case NOT_SUBSCRIBED = 'NotSubscribed';
+    case PENDING = 'Pending';
 }

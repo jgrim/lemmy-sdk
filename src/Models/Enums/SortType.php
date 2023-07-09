@@ -3,23 +3,27 @@ declare(strict_types=1);
 
 namespace JGrim\Lemmy\Sdk\Models\Enums;
 
+use JGrim\Lemmy\Sdk\Models\Enums\Trait\GetEnumTypes;
+
 enum SortType: string
 {
-    case Active = 'Active';
-    case Hot = 'Hot';
-    case New = 'New';
-    case Old = 'Old';
-    case TopDay = 'TopDay';
-    case TopWeek = 'TopWeek';
-    case TopMonth = 'TopMonth';
-    case TopYear = 'TopYear';
-    case TopAll = 'TopAll';
-    case MostComments = 'MostComments';
-    case NewComments = 'NewComments';
-    case TopHour = 'TopHour';
-    case TopSixHour = 'TopSixHour';
-    case TopTwelveHour = 'TopTwelveHour';
-    case TopThreeMonths = 'TopThreeMonths';
-    case TopSixMonths = 'TopSixMonths';
-    case TopNineMonths = 'TopNineMonths';
+    use GetEnumTypes;
+
+    case ACTIVE = 'Active';
+    case HOT = 'Hot';
+    case NEW = 'New';
+    case OLD = 'Old';
+    case TOP_DAY = 'TopDay';
+    case TOP_WEEK = 'TopWeek';
+    case TOP_MONTH = 'TopMonth';
+    case TOP_YEAR = 'TopYear';
+    case TOP_ALL = 'TopAll';
+    case MOST_COMMENTS = 'MostComments';
+    case NEW_COMMENTS = 'NewComments';
+    case TOP_HOUR = 'TopHour';
+    case TOP_SIX_HOUR = 'TopSixHour';
+    case TOP_TWELVE_HOUR = 'TopTwelveHour';
+    case TOP_THREE_MONTHS = 'TopThreeMonths';
+    case TOP_SIX_MONTHS = 'TopSixMonths';
+    case TOP_NINE_MONTHS = 'TopNineMonths';
 }
