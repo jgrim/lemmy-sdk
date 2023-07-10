@@ -11,6 +11,6 @@ final class ModRemovePost implements Model
     public int $mod_person_id;
     public int $post_id;
     public ?string $reason = null;
-    public int $removed;
+    public bool $removed;
     public string $when_;
 }
