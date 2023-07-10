@@ -8,4 +8,9 @@ trait GetEnumTypes
     {
         return array_column(self::cases(), 'value');
     }
+
+    public static function getAllTypes(): array
+    {
+        return array_column(self::cases(), 'name');
+    }
 }

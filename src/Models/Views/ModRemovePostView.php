@@ -12,7 +12,7 @@ use Sunrise\Hydrator\Annotation\Relationship;
 final class ModRemovePostView implements Model
 {
     #[Relationship(ModRemovePost::class)]
-    public ?ModRemovePost $mod_review_post = null;
+    public ?ModRemovePost $mod_remove_post = null;
     #[Relationship(Post::class)]
     public ?Post $post = null;
     #[Relationship(Community::class)]
