@@ -24,6 +24,11 @@ final readonly class Client
     {
     }
 
+    public static function userAgent(): string
+    {
+        return 'jgrim-lemmy-sdk/1.0';
+    }
+
     public static function create(string $uri): self
     {
         return new self(new GuzzleClient([
@@ -31,7 +36,8 @@ final readonly class Client
             'timeout' => 2.0,
             'headers' => [
                 'Accept' => 'application/json',
-                'Content-Type' => 'application/json'
+                'Content-Type' => 'application/json',
+                'User-Agent' => self::userAgent(),
             ]
         ]));
     }
